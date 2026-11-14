@@ -21,9 +21,11 @@ npm run preview  # prévia do build
 
 ## Publicação automática na Vercel
 
-Configuração do projeto `kipp-earth-trends-lab`, na conta do time KIPP:
+Configuração do projeto `nasa-earth-trends`, na conta do time KIPP:
 
-Protótipo exploratório publicado: **[kipp-earth-trends-lab.vercel.app](https://kipp-earth-trends-lab.vercel.app/)**.
+Produção: **[nasa-earth-trends.vercel.app](https://nasa-earth-trends.vercel.app/)**.
+
+Painel: [projeto na Vercel](https://vercel.com/lucas-projects-62e8b289/nasa-earth-trends).
 
 | Campo             | Valor                        |
 | ----------------- | ---------------------------- |
@@ -36,7 +38,7 @@ Protótipo exploratório publicado: **[kipp-earth-trends-lab.vercel.app](https:/
 | Build Command     | `npm test && npm run build`  |
 | Output Directory  | `dist`                       |
 
-Após conectar este repositório ao projeto da Vercel, a integração Git publicará os pushes na `main`. O arquivo `vercel.json` concentra a configuração e limita os deploys automáticos a essa branch. Não há necessidade de armazenar um token Vercel no GitHub.
+O repositório está conectado à Vercel, e a integração Git publica automaticamente os pushes na `main`. O arquivo `vercel.json` concentra a configuração e limita os deploys automáticos a essa branch. Não há necessidade de armazenar um token Vercel no GitHub.
 
 O comando `node scripts/vercel-ignore-build.mjs` compara o frontend com o commit do último deploy bem-sucedido (`VERCEL_GIT_PREVIOUS_SHA`). Assim, alterações apenas na documentação ou nos experimentos não recompilam o site, e um push com vários commits considera todas as mudanças acumuladas. No primeiro deploy ou quando o histórico não está disponível, a build é executada.
 

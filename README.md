@@ -2,7 +2,7 @@
 
 Repositório do time KIPP para explorar o desafio **Be An Earth System Trend Detective!**, do NASA Space Apps 2026.
 
-**[Abrir o protótipo publicado](https://kipp-earth-trends-lab.vercel.app/)**
+**[Abrir a aplicação publicada](https://nasa-earth-trends.vercel.app/)**
 
 Os arquivos iniciais foram importados do laboratório KIPP em **14 de novembro de 2026**, iniciando um novo histórico Git. As datas e a identificação dos materiais preparatórios permanecem registradas na documentação.
 
@@ -36,6 +36,6 @@ Consulte a [documentação do frontend](frontend/README.md) para conhecer a expe
 
 ## Publicação
 
-O projeto da Vercel deve estar conectado a `Luckstai/nasa-earth-trends`, com **Root Directory** `frontend` e **Production Branch** `main`.
+O projeto `nasa-earth-trends` da Vercel está conectado a `Luckstai/nasa-earth-trends`, com **Root Directory** `frontend` e **Production Branch** `main`.
 
 Cada push na `main` que modificar o frontend publica uma nova versão após os testes e a build. Mudanças apenas em `context/`, `ml_experiments/` ou neste README não precisam reconstruir o site. A configuração versionada está em [`frontend/vercel.json`](frontend/vercel.json).

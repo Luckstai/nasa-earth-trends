@@ -19,6 +19,6 @@
 
 - Use Node.js 24.
 - Valide alterações funcionais com `npm --prefix frontend test` e `npm --prefix frontend run build`.
-- A publicação usa a conta do time KIPP na Vercel, Root Directory `frontend` e Production Branch `main`. Confira o vínculo do projeto com `Luckstai/nasa-earth-trends` antes de publicar.
+- A publicação usa a conta do time KIPP na Vercel, projeto `nasa-earth-trends`, Root Directory `frontend` e Production Branch `main`. Confira o vínculo do projeto com `Luckstai/nasa-earth-trends` antes de publicar.
 - Mantenha a configuração de build em `frontend/vercel.json`. A publicação automática ocorre pela integração Git da Vercel.
 - Diferencie dados simulados de observações reais. Nunca apresente os números do protótipo como descobertas científicas.
