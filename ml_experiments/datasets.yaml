@@ -1,0 +1,181 @@
+
+# NASA Space Apps Challenge 2026
+# Exploratory Earth System Datasets
+#
+# Catálogo inicial de produtos candidatos.
+# Não representa seleção definitiva de datasets.
+
+project:
+  name: "Earth System Trend Detective"
+  phase: "exploratory"
+  challenge_url: "https://www.spaceappschallenge.org/2026/challenges/be-an-earth-system-trend-detective/"
+
+datasets:
+
+  - id: air_temperature
+    name: "Air Temperature at 2m"
+    priority: high
+    domain: atmosphere
+
+    variable:
+      name: air_temperature
+      unit: celsius
+      parameters:
+        - T2M
+        - T2M_MAX
+        - T2M_MIN
+
+    source:
+      provider: NASA POWER
+      product: POWER Daily Meteorology
+      url: "https://power.larc.nasa.gov/"
+      api: "https://power.larc.nasa.gov/api/temporal/daily/point"
+      access_type: rest_api
+      formats:
+        - json
+        - csv
+
+    exploration:
+      - long_term_trend
+      - seasonality
+      - temperature_anomalies
+      - extreme_temperatures
+
+  - id: precipitation
+    name: "Precipitation"
+    priority: high
+    domain: hydrology
+
+    variable:
+      name: precipitation
+      unit: mm_per_hour
+      note: "Monthly mean precipitation rate; convert to accumulation when needed."
+
+    source:
+      provider: NASA GES DISC
+      product: GPM IMERG Final Run Monthly
+      short_name: GPM_3IMERGM
+      version: "07"
+      url: "https://disc.gsfc.nasa.gov/datasets/GPM_3IMERGM_07/summary"
+      access_type: earthdata
+      formats:
+        - netcdf
+
+    exploration:
+      - precipitation_trend
+      - seasonality
+      - precipitation_anomalies
+      - spatial_distribution
+
+  - id: vegetation_ndvi
+    name: "Normalized Difference Vegetation Index"
+    priority: high
+    domain: biosphere
+
+    variable:
+      name: NDVI
+      unit: dimensionless
+      valid_theoretical_range: [-1, 1]
+
+    source:
+      provider: NASA LP DAAC
+      product: MODIS Vegetation Indices
+      short_name: MOD13A2
+      version: "061"
+      url: "https://lpdaac.usgs.gov/products/mod13a2v061/"
+      access_type: earthdata
+      formats:
+        - hdf
+
+    resolution:
+      spatial: "1 km"
+      temporal: "16 days"
+
+    exploration:
+      - vegetation_trend
+      - seasonal_cycle
+      - vegetation_anomalies
+      - precipitation_relationship
+
+  - id: soil_moisture
+    name: "Surface Soil Moisture"
+    priority: medium
+    domain: hydrology
+
+    variable:
+      name: soil_moisture
+      unit: "m3/m3"
+
+    source:
+      provider: NASA NSIDC
+      product: SMAP Level-3 Soil Moisture
+      short_name: SPL3SMP
+      url: "https://nsidc.org/data/spl3smp"
+      access_type: earthdata
+      formats:
+        - hdf5
+
+    exploration:
+      - soil_moisture_trend
+      - drought_anomalies
+      - precipitation_lag
+      - vegetation_relationship
+
+  - id: land_surface_temperature
+    name: "Land Surface Temperature"
+    priority: medium
+    domain: land_surface
+
+    variable:
+      name: LST
+      unit: kelvin
+      parameters:
+        - LST_Day_1km
+        - LST_Night_1km
+
+    source:
+      provider: NASA LP DAAC
+      product: MODIS Land Surface Temperature
+      short_name: MOD11A2
+      version: "061"
+      url: "https://lpdaac.usgs.gov/products/mod11a2v061/"
+      access_type: earthdata
+      formats:
+        - hdf
+
+    resolution:
+      temporal: "8 days"
+
+    exploration:
+      - surface_temperature_trend
+      - day_night_difference
+      - urban_heat_patterns
+      - vegetation_relationship
+
+  - id: evapotranspiration
+    name: "Evapotranspiration"
+    priority: medium
+    domain: hydrology
+
+    variable:
+      name: ET
+      unit: "product_specific"
+
+    source:
+      provider: NASA LP DAAC
+      product: MODIS Evapotranspiration
+      short_name: MOD16A2
+      version: "061"
+      url: "https://lpdaac.usgs.gov/products/mod16a2v061/"
+      access_type: earthdata
+      formats:
+        - hdf
+
+    resolution:
+      temporal: "8 days"
+
+    exploration:
+      - evapotranspiration_trend
+      - drought_response
+      - temperature_relationship
+      - vegetation_relationship
